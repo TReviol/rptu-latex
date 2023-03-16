@@ -164,7 +164,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newlength{\headlineheight}
-\setlength{\headlineheight}{0.06\paperheight}
+\ifbeamer@compress%
+	\setlength{\headlineheight}{0.06\paperheight}
+\else%
+	\setlength{\headlineheight}{0.085\paperheight}
+\fi%
 \defbeamertemplate{headline}{rptudefault}{%
 \ifnum\c@framenumber>1%
 	\ifRPTU@displayNavigation%
